@@ -50,50 +50,34 @@
             this.L_nom = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.B_modif_VM = new System.Windows.Forms.Button();
             this.L_connected = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.B_ajout_VM = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TP_general = new System.Windows.Forms.TabPage();
-            this.GB_network = new System.Windows.Forms.GroupBox();
-            this.B_network_delete = new System.Windows.Forms.Button();
-            this.DGV_network_list = new System.Windows.Forms.DataGridView();
-            this.B_network_add = new System.Windows.Forms.Button();
-            this.TP_action = new System.Windows.Forms.TabPage();
-            this.GB_snapshot = new System.Windows.Forms.GroupBox();
-            this.B_snapshot_delete = new System.Windows.Forms.Button();
-            this.B_snapshot_restaur = new System.Windows.Forms.Button();
-            this.DGV_snapshot_list = new System.Windows.Forms.DataGridView();
-            this.B_snapshot_create = new System.Windows.Forms.Button();
-            this.TB_snapshot_name = new System.Windows.Forms.TextBox();
-            this.B_reboot = new System.Windows.Forms.Button();
-            this.B_resume = new System.Windows.Forms.Button();
-            this.B_suspend = new System.Windows.Forms.Button();
-            this.B_stop = new System.Windows.Forms.Button();
-            this.B_VM_Start = new System.Windows.Forms.Button();
             this.TBar_deverouille = new System.Windows.Forms.TrackBar();
             this.B_suppr_VM = new System.Windows.Forms.Button();
             this.TP_console = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.RTB_console = new System.Windows.Forms.RichTextBox();
             this.DGV_listVM = new System.Windows.Forms.DataGridView();
             this.VM_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VM_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T_refresh_VM = new System.Windows.Forms.Timer(this.components);
             this.T_refresh_journal = new System.Windows.Forms.Timer(this.components);
+            this.B_VM_Start = new System.Windows.Forms.Button();
+            this.B_stop = new System.Windows.Forms.Button();
+            this.B_suspend = new System.Windows.Forms.Button();
+            this.B_resume = new System.Windows.Forms.Button();
+            this.B_reboot = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.TP_general.SuspendLayout();
-            this.GB_network.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_network_list)).BeginInit();
-            this.TP_action.SuspendLayout();
-            this.GB_snapshot.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_snapshot_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBar_deverouille)).BeginInit();
             this.TP_console.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // L_id
@@ -135,7 +119,7 @@
             // L_lastExec
             // 
             this.L_lastExec.AutoSize = true;
-            this.L_lastExec.Location = new System.Drawing.Point(123, 306);
+            this.L_lastExec.Location = new System.Drawing.Point(372, 223);
             this.L_lastExec.Name = "L_lastExec";
             this.L_lastExec.Size = new System.Drawing.Size(64, 13);
             this.L_lastExec.TabIndex = 20;
@@ -144,7 +128,7 @@
             // L_created
             // 
             this.L_created.AutoSize = true;
-            this.L_created.Location = new System.Drawing.Point(75, 283);
+            this.L_created.Location = new System.Drawing.Point(324, 200);
             this.L_created.Name = "L_created";
             this.L_created.Size = new System.Drawing.Size(64, 13);
             this.L_created.TabIndex = 19;
@@ -251,7 +235,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 307);
+            this.label5.Location = new System.Drawing.Point(265, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 7;
@@ -270,7 +254,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 284);
+            this.label3.Location = new System.Drawing.Point(268, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 5;
@@ -284,16 +268,6 @@
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Volume attaché: ";
-            // 
-            // B_modif_VM
-            // 
-            this.B_modif_VM.Location = new System.Drawing.Point(521, 301);
-            this.B_modif_VM.Name = "B_modif_VM";
-            this.B_modif_VM.Size = new System.Drawing.Size(75, 23);
-            this.B_modif_VM.TabIndex = 3;
-            this.B_modif_VM.Text = "Modifier";
-            this.B_modif_VM.UseVisualStyleBackColor = true;
-            this.B_modif_VM.Click += new System.EventHandler(this.B_modif_VM_Click);
             // 
             // L_connected
             // 
@@ -334,7 +308,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TP_general);
-            this.tabControl1.Controls.Add(this.TP_action);
             this.tabControl1.Controls.Add(this.TP_console);
             this.tabControl1.Location = new System.Drawing.Point(261, 12);
             this.tabControl1.Name = "tabControl1";
@@ -344,9 +317,8 @@
             // 
             // TP_general
             // 
-            this.TP_general.Controls.Add(this.GB_network);
+            this.TP_general.Controls.Add(this.groupBox1);
             this.TP_general.Controls.Add(this.LB_volume);
-            this.TP_general.Controls.Add(this.B_modif_VM);
             this.TP_general.Controls.Add(this.L_id);
             this.TP_general.Controls.Add(this.label1);
             this.TP_general.Controls.Add(this.L_progress);
@@ -377,177 +349,14 @@
             this.TP_general.Text = "Général";
             this.TP_general.UseVisualStyleBackColor = true;
             // 
-            // GB_network
-            // 
-            this.GB_network.Controls.Add(this.B_network_delete);
-            this.GB_network.Controls.Add(this.DGV_network_list);
-            this.GB_network.Controls.Add(this.B_network_add);
-            this.GB_network.Location = new System.Drawing.Point(521, 50);
-            this.GB_network.Name = "GB_network";
-            this.GB_network.Size = new System.Drawing.Size(166, 141);
-            this.GB_network.TabIndex = 26;
-            this.GB_network.TabStop = false;
-            this.GB_network.Text = "Connexion reseaux :";
-            // 
-            // B_network_delete
-            // 
-            this.B_network_delete.Location = new System.Drawing.Point(87, 115);
-            this.B_network_delete.Name = "B_network_delete";
-            this.B_network_delete.Size = new System.Drawing.Size(75, 23);
-            this.B_network_delete.TabIndex = 1;
-            this.B_network_delete.Text = "Supprimer";
-            this.B_network_delete.UseVisualStyleBackColor = true;
-            // 
-            // DGV_network_list
-            // 
-            this.DGV_network_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_network_list.Location = new System.Drawing.Point(6, 19);
-            this.DGV_network_list.Name = "DGV_network_list";
-            this.DGV_network_list.Size = new System.Drawing.Size(156, 90);
-            this.DGV_network_list.TabIndex = 25;
-            // 
-            // B_network_add
-            // 
-            this.B_network_add.Location = new System.Drawing.Point(6, 115);
-            this.B_network_add.Name = "B_network_add";
-            this.B_network_add.Size = new System.Drawing.Size(75, 23);
-            this.B_network_add.TabIndex = 0;
-            this.B_network_add.Text = "Ajouter";
-            this.B_network_add.UseVisualStyleBackColor = true;
-            // 
-            // TP_action
-            // 
-            this.TP_action.Controls.Add(this.GB_snapshot);
-            this.TP_action.Controls.Add(this.B_reboot);
-            this.TP_action.Controls.Add(this.B_resume);
-            this.TP_action.Controls.Add(this.B_suspend);
-            this.TP_action.Controls.Add(this.B_stop);
-            this.TP_action.Controls.Add(this.B_VM_Start);
-            this.TP_action.Controls.Add(this.TBar_deverouille);
-            this.TP_action.Controls.Add(this.B_suppr_VM);
-            this.TP_action.Location = new System.Drawing.Point(4, 22);
-            this.TP_action.Name = "TP_action";
-            this.TP_action.Padding = new System.Windows.Forms.Padding(3);
-            this.TP_action.Size = new System.Drawing.Size(753, 394);
-            this.TP_action.TabIndex = 2;
-            this.TP_action.Text = "Action";
-            this.TP_action.UseVisualStyleBackColor = true;
-            // 
-            // GB_snapshot
-            // 
-            this.GB_snapshot.Controls.Add(this.B_snapshot_delete);
-            this.GB_snapshot.Controls.Add(this.B_snapshot_restaur);
-            this.GB_snapshot.Controls.Add(this.DGV_snapshot_list);
-            this.GB_snapshot.Controls.Add(this.B_snapshot_create);
-            this.GB_snapshot.Controls.Add(this.TB_snapshot_name);
-            this.GB_snapshot.Location = new System.Drawing.Point(6, 177);
-            this.GB_snapshot.Name = "GB_snapshot";
-            this.GB_snapshot.Size = new System.Drawing.Size(328, 211);
-            this.GB_snapshot.TabIndex = 13;
-            this.GB_snapshot.TabStop = false;
-            this.GB_snapshot.Text = "Snapshot";
-            // 
-            // B_snapshot_delete
-            // 
-            this.B_snapshot_delete.Location = new System.Drawing.Point(162, 179);
-            this.B_snapshot_delete.Name = "B_snapshot_delete";
-            this.B_snapshot_delete.Size = new System.Drawing.Size(156, 23);
-            this.B_snapshot_delete.TabIndex = 15;
-            this.B_snapshot_delete.Text = "Supprimer";
-            this.B_snapshot_delete.UseVisualStyleBackColor = true;
-            // 
-            // B_snapshot_restaur
-            // 
-            this.B_snapshot_restaur.Location = new System.Drawing.Point(6, 179);
-            this.B_snapshot_restaur.Name = "B_snapshot_restaur";
-            this.B_snapshot_restaur.Size = new System.Drawing.Size(150, 23);
-            this.B_snapshot_restaur.TabIndex = 14;
-            this.B_snapshot_restaur.Text = "Restaurer";
-            this.B_snapshot_restaur.UseVisualStyleBackColor = true;
-            // 
-            // DGV_snapshot_list
-            // 
-            this.DGV_snapshot_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_snapshot_list.Location = new System.Drawing.Point(6, 45);
-            this.DGV_snapshot_list.Name = "DGV_snapshot_list";
-            this.DGV_snapshot_list.Size = new System.Drawing.Size(312, 128);
-            this.DGV_snapshot_list.TabIndex = 10;
-            // 
-            // B_snapshot_create
-            // 
-            this.B_snapshot_create.Location = new System.Drawing.Point(243, 17);
-            this.B_snapshot_create.Name = "B_snapshot_create";
-            this.B_snapshot_create.Size = new System.Drawing.Size(75, 23);
-            this.B_snapshot_create.TabIndex = 12;
-            this.B_snapshot_create.Text = "Créer";
-            this.B_snapshot_create.UseVisualStyleBackColor = true;
-            this.B_snapshot_create.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // TB_snapshot_name
-            // 
-            this.TB_snapshot_name.Location = new System.Drawing.Point(6, 19);
-            this.TB_snapshot_name.Name = "TB_snapshot_name";
-            this.TB_snapshot_name.Size = new System.Drawing.Size(231, 20);
-            this.TB_snapshot_name.TabIndex = 11;
-            // 
-            // B_reboot
-            // 
-            this.B_reboot.Location = new System.Drawing.Point(168, 6);
-            this.B_reboot.Name = "B_reboot";
-            this.B_reboot.Size = new System.Drawing.Size(75, 23);
-            this.B_reboot.TabIndex = 9;
-            this.B_reboot.Text = "Redémarer";
-            this.B_reboot.UseVisualStyleBackColor = true;
-            this.B_reboot.Click += new System.EventHandler(this.B_reboot_Click);
-            // 
-            // B_resume
-            // 
-            this.B_resume.Location = new System.Drawing.Point(6, 35);
-            this.B_resume.Name = "B_resume";
-            this.B_resume.Size = new System.Drawing.Size(75, 23);
-            this.B_resume.TabIndex = 8;
-            this.B_resume.Text = "Reprendre";
-            this.B_resume.UseVisualStyleBackColor = true;
-            this.B_resume.Click += new System.EventHandler(this.B_resume_Click);
-            // 
-            // B_suspend
-            // 
-            this.B_suspend.Location = new System.Drawing.Point(87, 35);
-            this.B_suspend.Name = "B_suspend";
-            this.B_suspend.Size = new System.Drawing.Size(75, 23);
-            this.B_suspend.TabIndex = 7;
-            this.B_suspend.Text = "Pause";
-            this.B_suspend.UseVisualStyleBackColor = true;
-            this.B_suspend.Click += new System.EventHandler(this.B_suspend_Click);
-            // 
-            // B_stop
-            // 
-            this.B_stop.Location = new System.Drawing.Point(87, 6);
-            this.B_stop.Name = "B_stop";
-            this.B_stop.Size = new System.Drawing.Size(75, 23);
-            this.B_stop.TabIndex = 6;
-            this.B_stop.Text = "Arreter";
-            this.B_stop.UseVisualStyleBackColor = true;
-            this.B_stop.Click += new System.EventHandler(this.B_stop_Click);
-            // 
-            // B_VM_Start
-            // 
-            this.B_VM_Start.Location = new System.Drawing.Point(6, 6);
-            this.B_VM_Start.Name = "B_VM_Start";
-            this.B_VM_Start.Size = new System.Drawing.Size(75, 23);
-            this.B_VM_Start.TabIndex = 5;
-            this.B_VM_Start.Text = "Démarer";
-            this.B_VM_Start.UseVisualStyleBackColor = true;
-            this.B_VM_Start.Click += new System.EventHandler(this.B_VM_Start_Click);
-            // 
             // TBar_deverouille
             // 
             this.TBar_deverouille.BackColor = System.Drawing.Color.DimGray;
             this.TBar_deverouille.LargeChange = 1;
-            this.TBar_deverouille.Location = new System.Drawing.Point(576, 343);
+            this.TBar_deverouille.Location = new System.Drawing.Point(6, 331);
             this.TBar_deverouille.Maximum = 1000;
             this.TBar_deverouille.Name = "TBar_deverouille";
-            this.TBar_deverouille.Size = new System.Drawing.Size(67, 45);
+            this.TBar_deverouille.Size = new System.Drawing.Size(136, 45);
             this.TBar_deverouille.TabIndex = 4;
             this.TBar_deverouille.TickFrequency = 10000;
             this.TBar_deverouille.TickStyle = System.Windows.Forms.TickStyle.Both;
@@ -556,7 +365,7 @@
             // B_suppr_VM
             // 
             this.B_suppr_VM.Enabled = false;
-            this.B_suppr_VM.Location = new System.Drawing.Point(649, 343);
+            this.B_suppr_VM.Location = new System.Drawing.Point(148, 331);
             this.B_suppr_VM.Name = "B_suppr_VM";
             this.B_suppr_VM.Size = new System.Drawing.Size(98, 45);
             this.B_suppr_VM.TabIndex = 3;
@@ -566,7 +375,6 @@
             // 
             // TP_console
             // 
-            this.TP_console.Controls.Add(this.textBox1);
             this.TP_console.Controls.Add(this.RTB_console);
             this.TP_console.Location = new System.Drawing.Point(4, 22);
             this.TP_console.Name = "TP_console";
@@ -576,19 +384,12 @@
             this.TP_console.Text = "Journal";
             this.TP_console.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 368);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(741, 20);
-            this.textBox1.TabIndex = 1;
-            // 
             // RTB_console
             // 
             this.RTB_console.Location = new System.Drawing.Point(6, 6);
             this.RTB_console.Name = "RTB_console";
             this.RTB_console.ReadOnly = true;
-            this.RTB_console.Size = new System.Drawing.Size(741, 356);
+            this.RTB_console.Size = new System.Drawing.Size(741, 382);
             this.RTB_console.TabIndex = 0;
             this.RTB_console.Text = "";
             // 
@@ -634,6 +435,72 @@
             this.T_refresh_journal.Interval = 1000;
             this.T_refresh_journal.Tick += new System.EventHandler(this.refreshJournal);
             // 
+            // B_VM_Start
+            // 
+            this.B_VM_Start.Location = new System.Drawing.Point(6, 19);
+            this.B_VM_Start.Name = "B_VM_Start";
+            this.B_VM_Start.Size = new System.Drawing.Size(75, 23);
+            this.B_VM_Start.TabIndex = 5;
+            this.B_VM_Start.Text = "Démarer";
+            this.B_VM_Start.UseVisualStyleBackColor = true;
+            this.B_VM_Start.Click += new System.EventHandler(this.B_VM_Start_Click);
+            // 
+            // B_stop
+            // 
+            this.B_stop.Location = new System.Drawing.Point(87, 19);
+            this.B_stop.Name = "B_stop";
+            this.B_stop.Size = new System.Drawing.Size(75, 23);
+            this.B_stop.TabIndex = 6;
+            this.B_stop.Text = "Arreter";
+            this.B_stop.UseVisualStyleBackColor = true;
+            this.B_stop.Click += new System.EventHandler(this.B_stop_Click);
+            // 
+            // B_suspend
+            // 
+            this.B_suspend.Location = new System.Drawing.Point(87, 48);
+            this.B_suspend.Name = "B_suspend";
+            this.B_suspend.Size = new System.Drawing.Size(75, 23);
+            this.B_suspend.TabIndex = 7;
+            this.B_suspend.Text = "Pause";
+            this.B_suspend.UseVisualStyleBackColor = true;
+            this.B_suspend.Click += new System.EventHandler(this.B_suspend_Click);
+            // 
+            // B_resume
+            // 
+            this.B_resume.Location = new System.Drawing.Point(6, 48);
+            this.B_resume.Name = "B_resume";
+            this.B_resume.Size = new System.Drawing.Size(75, 23);
+            this.B_resume.TabIndex = 8;
+            this.B_resume.Text = "Reprendre";
+            this.B_resume.UseVisualStyleBackColor = true;
+            this.B_resume.Click += new System.EventHandler(this.B_resume_Click);
+            // 
+            // B_reboot
+            // 
+            this.B_reboot.Location = new System.Drawing.Point(168, 19);
+            this.B_reboot.Name = "B_reboot";
+            this.B_reboot.Size = new System.Drawing.Size(75, 23);
+            this.B_reboot.TabIndex = 9;
+            this.B_reboot.Text = "Redémarer";
+            this.B_reboot.UseVisualStyleBackColor = true;
+            this.B_reboot.Click += new System.EventHandler(this.B_reboot_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.TBar_deverouille);
+            this.groupBox1.Controls.Add(this.B_reboot);
+            this.groupBox1.Controls.Add(this.B_VM_Start);
+            this.groupBox1.Controls.Add(this.B_suppr_VM);
+            this.groupBox1.Controls.Add(this.B_stop);
+            this.groupBox1.Controls.Add(this.B_resume);
+            this.groupBox1.Controls.Add(this.B_suspend);
+            this.groupBox1.Location = new System.Drawing.Point(488, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(252, 382);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // Nova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,22 +512,15 @@
             this.Controls.Add(this.B_ajout_VM);
             this.Name = "Nova";
             this.Text = "Nova";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Nova_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.TP_general.ResumeLayout(false);
             this.TP_general.PerformLayout();
-            this.GB_network.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_network_list)).EndInit();
-            this.TP_action.ResumeLayout(false);
-            this.TP_action.PerformLayout();
-            this.GB_snapshot.ResumeLayout(false);
-            this.GB_snapshot.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_snapshot_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBar_deverouille)).EndInit();
             this.TP_console.ResumeLayout(false);
-            this.TP_console.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -669,7 +529,6 @@
         private System.Windows.Forms.Label L_connected;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button B_ajout_VM;
-        private System.Windows.Forms.Button B_modif_VM;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -695,30 +554,19 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TP_general;
         private System.Windows.Forms.TabPage TP_console;
-        private System.Windows.Forms.TabPage TP_action;
         private System.Windows.Forms.TrackBar TBar_deverouille;
         private System.Windows.Forms.Button B_suppr_VM;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox RTB_console;
-        private System.Windows.Forms.Button B_VM_Start;
-        private System.Windows.Forms.Button B_stop;
-        private System.Windows.Forms.Button B_resume;
-        private System.Windows.Forms.Button B_suspend;
-        private System.Windows.Forms.Button B_reboot;
-        private System.Windows.Forms.GroupBox GB_snapshot;
-        private System.Windows.Forms.Button B_snapshot_restaur;
-        private System.Windows.Forms.DataGridView DGV_snapshot_list;
-        private System.Windows.Forms.Button B_snapshot_create;
-        private System.Windows.Forms.TextBox TB_snapshot_name;
-        private System.Windows.Forms.Button B_snapshot_delete;
-        private System.Windows.Forms.GroupBox GB_network;
-        private System.Windows.Forms.Button B_network_delete;
-        private System.Windows.Forms.DataGridView DGV_network_list;
-        private System.Windows.Forms.Button B_network_add;
         private System.Windows.Forms.DataGridView DGV_listVM;
         private System.Windows.Forms.DataGridViewTextBoxColumn VM_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn VM_name;
         private System.Windows.Forms.Timer T_refresh_VM;
         private System.Windows.Forms.Timer T_refresh_journal;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button B_reboot;
+        private System.Windows.Forms.Button B_VM_Start;
+        private System.Windows.Forms.Button B_stop;
+        private System.Windows.Forms.Button B_resume;
+        private System.Windows.Forms.Button B_suspend;
     }
 }

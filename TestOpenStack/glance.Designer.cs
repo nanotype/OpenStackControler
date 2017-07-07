@@ -41,17 +41,17 @@
             this.idFlavor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFlavor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.L_flavor_name = new System.Windows.Forms.Label();
-            this.L_flavor_id = new System.Windows.Forms.Label();
-            this.L_flavor_diskSize = new System.Windows.Forms.Label();
-            this.L_flavor_memorySize = new System.Windows.Forms.Label();
-            this.L_flavor_swapSize = new System.Windows.Forms.Label();
             this.L_flavor_virtualCPUs = new System.Windows.Forms.Label();
+            this.L_flavor_swapSize = new System.Windows.Forms.Label();
+            this.L_flavor_memorySize = new System.Windows.Forms.Label();
+            this.L_flavor_diskSize = new System.Windows.Forms.Label();
+            this.L_flavor_id = new System.Windows.Forms.Label();
+            this.L_flavor_name = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_list_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_list_flavor)).BeginInit();
@@ -197,86 +197,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // label2
+            // L_flavor_virtualCPUs
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Taille du disque:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Taille memoire:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(269, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Taille du SWAP:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(269, 122);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "CPU:";
-            // 
-            // L_flavor_name
-            // 
-            this.L_flavor_name.AutoSize = true;
-            this.L_flavor_name.Location = new System.Drawing.Point(13, 25);
-            this.L_flavor_name.Name = "L_flavor_name";
-            this.L_flavor_name.Size = new System.Drawing.Size(27, 13);
-            this.L_flavor_name.TabIndex = 6;
-            this.L_flavor_name.Text = "nom";
-            // 
-            // L_flavor_id
-            // 
-            this.L_flavor_id.AutoSize = true;
-            this.L_flavor_id.Location = new System.Drawing.Point(40, 47);
-            this.L_flavor_id.Name = "L_flavor_id";
-            this.L_flavor_id.Size = new System.Drawing.Size(76, 13);
-            this.L_flavor_id.TabIndex = 7;
-            this.L_flavor_id.Text = "Non renseigné";
-            // 
-            // L_flavor_diskSize
-            // 
-            this.L_flavor_diskSize.AutoSize = true;
-            this.L_flavor_diskSize.Location = new System.Drawing.Point(103, 90);
-            this.L_flavor_diskSize.Name = "L_flavor_diskSize";
-            this.L_flavor_diskSize.Size = new System.Drawing.Size(76, 13);
-            this.L_flavor_diskSize.TabIndex = 8;
-            this.L_flavor_diskSize.Text = "Non renseigné";
-            // 
-            // L_flavor_memorySize
-            // 
-            this.L_flavor_memorySize.AutoSize = true;
-            this.L_flavor_memorySize.Location = new System.Drawing.Point(96, 122);
-            this.L_flavor_memorySize.Name = "L_flavor_memorySize";
-            this.L_flavor_memorySize.Size = new System.Drawing.Size(76, 13);
-            this.L_flavor_memorySize.TabIndex = 9;
-            this.L_flavor_memorySize.Text = "Non renseigné";
+            this.L_flavor_virtualCPUs.AutoSize = true;
+            this.L_flavor_virtualCPUs.Location = new System.Drawing.Point(307, 122);
+            this.L_flavor_virtualCPUs.Name = "L_flavor_virtualCPUs";
+            this.L_flavor_virtualCPUs.Size = new System.Drawing.Size(76, 13);
+            this.L_flavor_virtualCPUs.TabIndex = 11;
+            this.L_flavor_virtualCPUs.Text = "Non renseigné";
             // 
             // L_flavor_swapSize
             // 
@@ -287,20 +215,92 @@
             this.L_flavor_swapSize.TabIndex = 10;
             this.L_flavor_swapSize.Text = "Non renseigné";
             // 
-            // L_flavor_virtualCPUs
+            // L_flavor_memorySize
             // 
-            this.L_flavor_virtualCPUs.AutoSize = true;
-            this.L_flavor_virtualCPUs.Location = new System.Drawing.Point(307, 122);
-            this.L_flavor_virtualCPUs.Name = "L_flavor_virtualCPUs";
-            this.L_flavor_virtualCPUs.Size = new System.Drawing.Size(76, 13);
-            this.L_flavor_virtualCPUs.TabIndex = 11;
-            this.L_flavor_virtualCPUs.Text = "Non renseigné";
+            this.L_flavor_memorySize.AutoSize = true;
+            this.L_flavor_memorySize.Location = new System.Drawing.Point(96, 122);
+            this.L_flavor_memorySize.Name = "L_flavor_memorySize";
+            this.L_flavor_memorySize.Size = new System.Drawing.Size(76, 13);
+            this.L_flavor_memorySize.TabIndex = 9;
+            this.L_flavor_memorySize.Text = "Non renseigné";
+            // 
+            // L_flavor_diskSize
+            // 
+            this.L_flavor_diskSize.AutoSize = true;
+            this.L_flavor_diskSize.Location = new System.Drawing.Point(103, 90);
+            this.L_flavor_diskSize.Name = "L_flavor_diskSize";
+            this.L_flavor_diskSize.Size = new System.Drawing.Size(76, 13);
+            this.L_flavor_diskSize.TabIndex = 8;
+            this.L_flavor_diskSize.Text = "Non renseigné";
+            // 
+            // L_flavor_id
+            // 
+            this.L_flavor_id.AutoSize = true;
+            this.L_flavor_id.Location = new System.Drawing.Point(40, 47);
+            this.L_flavor_id.Name = "L_flavor_id";
+            this.L_flavor_id.Size = new System.Drawing.Size(76, 13);
+            this.L_flavor_id.TabIndex = 7;
+            this.L_flavor_id.Text = "Non renseigné";
+            // 
+            // L_flavor_name
+            // 
+            this.L_flavor_name.AutoSize = true;
+            this.L_flavor_name.Location = new System.Drawing.Point(13, 25);
+            this.L_flavor_name.Name = "L_flavor_name";
+            this.L_flavor_name.Size = new System.Drawing.Size(27, 13);
+            this.L_flavor_name.TabIndex = 6;
+            this.L_flavor_name.Text = "nom";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(269, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "CPU:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(269, 90);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Taille du SWAP:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Taille memoire:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Taille du disque:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ID:";
             // 
             // Glance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 646);
+            this.ClientSize = new System.Drawing.Size(1086, 423);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DGV_list_flavor);
             this.Controls.Add(this.DGV_list_image);

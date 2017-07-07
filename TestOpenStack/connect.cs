@@ -20,13 +20,12 @@ namespace TestOpenStack
                 Username = login,
                 Password = password,
                 ProjectName = project
-                
             };
 
             authentification(serverLink);
         }
 
-        private async void authentification(Uri serverLink)
+        private void authentification(Uri serverLink)
         {
             OpenStackConnection = new OpenStackIdentityProvider(serverLink, serverConnection);
             try
@@ -36,7 +35,7 @@ namespace TestOpenStack
 
                 ServiceCatalog[] SC = UA.ServiceCatalog;
 
-                // 2. mise à jour du lien de connexion vers le service de networking
+                // mise à jour du lien de connexion vers le service de networking
                 var networkingEndpoint = UA.ServiceCatalog.Single(svc => svc.Type == "network")
                     .Endpoints.Single(e => e.Region == "RegionOne");
                 networkingEndpoint.GetType().GetProperty("PublicURL")

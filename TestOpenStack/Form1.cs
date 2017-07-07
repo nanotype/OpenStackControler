@@ -126,16 +126,6 @@ namespace TestOpenStack
             {
                 MessageBox.Show("ID: " + EE.Id + '\n' + "Nom: " + EE.Name + '\n' + "Public: " + EE.PublicURL + '\n' + "Interne: " + EE.InternalURL, "INFO_DEBUG");
             }
-
-
-
-            /*Endpoint[] TabE = { E };
-            ServiceCatalog test = new ServiceCatalog("Netowrk","Network",);*/
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            fonctionTest();
         }
     }
 }
