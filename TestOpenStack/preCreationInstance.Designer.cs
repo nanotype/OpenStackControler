@@ -229,6 +229,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "preCreationInstance";
+            this.ShowInTaskbar = false;
             this.Text = "Nouvelle instance";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_image_dispo)).EndInit();

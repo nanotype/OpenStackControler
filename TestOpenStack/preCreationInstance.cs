@@ -79,36 +79,6 @@ namespace TestOpenStack
             }
         }
 
-        /*private async void verrifName(object sender, EventArgs e)
-        {
-            if (TB_nom_VM.Text != "")
-            {
-                bool existe = false;
-                ServerListOptions searchServerOption = new ServerListOptions();
-                searchServerOption.Name = TB_nom_VM.Text;
-                IPage<Server> listServer = await compute.ListServersAsync(searchServerOption);
-                foreach (Server server in listServer)
-                {
-                    if (server.Name == TB_nom_VM.Text)
-                    {
-                        existe = true;
-                    }
-                }
-                if (existe == true)
-                {
-                    TB_nom_VM.BackColor = System.Drawing.Color.LightCoral;
-                }
-                else
-                {
-                    TB_nom_VM.BackColor = System.Drawing.Color.PaleGreen;
-                }
-            }
-            else
-            {
-                TB_nom_VM.BackColor = System.Drawing.Color.White;
-            }
-        }*/
-
         private void verrifDataBeforeCreation()
         {
             //initialisation des variables de verrification d'erreur

@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="confirmationSuppression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmationSuppression.Designer.cs">
+      <DependentUpon>confirmationSuppression.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nova.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="Glance.Designer.cs">
       <DependentUpon>Glance.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="confirmationSuppression.resx">
+      <DependentUpon>confirmationSuppression.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nova.resx">
       <DependentUpon>Nova.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Glance.resx">
       <DependentUpon>Glance.cs</DependentUpon>
@@ -134,6 +144,12 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\ic_delete_forever_black_48dp_1x.png" />
+    <None Include="Resources\ic_stop_black_48dp_1x.png" />
+    <None Include="Resources\ic_replay_black_48dp_1x.png" />
+    <None Include="Resources\ic_play_arrow_black_48dp_1x.png" />
+    <None Include="Resources\ic_pause_black_48dp_1x.png" />
+    <None Include="Resources\ic_error_black_48dp_1x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

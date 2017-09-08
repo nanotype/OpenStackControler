@@ -70,7 +70,7 @@
             this.groupBox1.Size = new System.Drawing.Size(785, 203);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Attribut";
+            this.groupBox1.Text = "Détails de l\'image";
             // 
             // L_nom
             // 
@@ -195,7 +195,7 @@
             this.groupBox2.Size = new System.Drawing.Size(785, 191);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Détails du flavor";
             // 
             // L_flavor_virtualCPUs
             // 
@@ -300,12 +300,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 423);
+            this.ClientSize = new System.Drawing.Size(1085, 423);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DGV_list_flavor);
             this.Controls.Add(this.DGV_list_image);
             this.Controls.Add(this.groupBox1);
             this.Name = "Glance";
+            this.ShowInTaskbar = false;
             this.Text = "Glance";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Glance_FormClosed);
             this.groupBox1.ResumeLayout(false);

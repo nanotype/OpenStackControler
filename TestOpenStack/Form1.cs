@@ -45,7 +45,7 @@ namespace TestOpenStack
             }
 
             // fonction de création des interfaces
-            glanceInterface();
+            //glanceInterface();
             novaInterface();
 
         }
@@ -120,12 +120,7 @@ namespace TestOpenStack
 
         private void fonctionTest()
         {
-            Endpoint E = new Endpoint();
-            IEnumerable<ExtendedEndpoint> listEE = connect.GetConnection().ListEndpoints(connect.GetIdentityToken().Id);
-            foreach(ExtendedEndpoint EE in listEE)
-            {
-                MessageBox.Show("ID: " + EE.Id + '\n' + "Nom: " + EE.Name + '\n' + "Public: " + EE.PublicURL + '\n' + "Interne: " + EE.InternalURL, "INFO_DEBUG");
-            }
+            MessageBox.Show(ServerState.Active + "/" + ServerState.Build + "/" + ServerState.Deleted + "/" + ServerState.Error + "/" + ServerState.HardReboot + "/" + ServerState.Migrating + "/" + ServerState.Password + "/" + ServerState.Reboot + "/" + ServerState.Rebuild + "/" + ServerState.Suspended);
         }
     }
 }

@@ -23,3 +23,4 @@ C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\Test
 C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Debug\TestOpenStack.glance.resources
 C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Debug\TestOpenStack.Nova.resources
 C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Debug\TestOpenStack.preCreationInstance.resources
+C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Debug\TestOpenStack.confirmationSuppression.resources
