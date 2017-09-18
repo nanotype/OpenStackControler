@@ -430,9 +430,9 @@
             // 
             // B_reboot
             // 
-            this.B_reboot.Location = new System.Drawing.Point(6, 98);
+            this.B_reboot.Location = new System.Drawing.Point(6, 81);
             this.B_reboot.Name = "B_reboot";
-            this.B_reboot.Size = new System.Drawing.Size(240, 58);
+            this.B_reboot.Size = new System.Drawing.Size(240, 52);
             this.B_reboot.TabIndex = 9;
             this.B_reboot.Text = "Redémarer";
             this.B_reboot.UseVisualStyleBackColor = true;
@@ -442,7 +442,7 @@
             // 
             this.B_VM_Start.Location = new System.Drawing.Point(6, 19);
             this.B_VM_Start.Name = "B_VM_Start";
-            this.B_VM_Start.Size = new System.Drawing.Size(240, 71);
+            this.B_VM_Start.Size = new System.Drawing.Size(240, 56);
             this.B_VM_Start.TabIndex = 5;
             this.B_VM_Start.Text = "Démarer";
             this.B_VM_Start.UseVisualStyleBackColor = true;
@@ -450,9 +450,9 @@
             // 
             // B_suppr_VM
             // 
-            this.B_suppr_VM.Location = new System.Drawing.Point(6, 331);
+            this.B_suppr_VM.Location = new System.Drawing.Point(6, 321);
             this.B_suppr_VM.Name = "B_suppr_VM";
-            this.B_suppr_VM.Size = new System.Drawing.Size(240, 45);
+            this.B_suppr_VM.Size = new System.Drawing.Size(240, 55);
             this.B_suppr_VM.TabIndex = 3;
             this.B_suppr_VM.Text = "Supprimer";
             this.B_suppr_VM.UseVisualStyleBackColor = true;
@@ -460,9 +460,9 @@
             // 
             // B_stop
             // 
-            this.B_stop.Location = new System.Drawing.Point(6, 162);
+            this.B_stop.Location = new System.Drawing.Point(6, 139);
             this.B_stop.Name = "B_stop";
-            this.B_stop.Size = new System.Drawing.Size(240, 60);
+            this.B_stop.Size = new System.Drawing.Size(240, 55);
             this.B_stop.TabIndex = 6;
             this.B_stop.Text = "Arreter";
             this.B_stop.UseVisualStyleBackColor = true;
@@ -470,9 +470,9 @@
             // 
             // B_resume
             // 
-            this.B_resume.Location = new System.Drawing.Point(6, 228);
+            this.B_resume.Location = new System.Drawing.Point(6, 200);
             this.B_resume.Name = "B_resume";
-            this.B_resume.Size = new System.Drawing.Size(240, 47);
+            this.B_resume.Size = new System.Drawing.Size(240, 59);
             this.B_resume.TabIndex = 8;
             this.B_resume.Text = "Reprendre";
             this.B_resume.UseVisualStyleBackColor = true;
@@ -480,9 +480,9 @@
             // 
             // B_suspend
             // 
-            this.B_suspend.Location = new System.Drawing.Point(6, 281);
+            this.B_suspend.Location = new System.Drawing.Point(6, 265);
             this.B_suspend.Name = "B_suspend";
-            this.B_suspend.Size = new System.Drawing.Size(240, 44);
+            this.B_suspend.Size = new System.Drawing.Size(240, 50);
             this.B_suspend.TabIndex = 7;
             this.B_suspend.Text = "Pause";
             this.B_suspend.UseVisualStyleBackColor = true;
@@ -579,9 +579,11 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.DGV_actionVm);
             this.Controls.Add(this.B_ajout_VM);
+            this.MaximizeBox = false;
             this.Name = "Nova";
             this.ShowInTaskbar = false;
             this.Text = "Nova";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.DGV_actionVm)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.TP_general.ResumeLayout(false);

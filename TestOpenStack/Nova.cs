@@ -164,7 +164,7 @@ namespace TestOpenStack
 
             try
             {
-                L_created.Text = server.Created.Value.ToString();
+                L_created.Text = server.Created.Value.DateTime.ToString();
             }
             catch (Exception ex) { L_created.Text = "Non renseigné"; }
 
@@ -236,7 +236,7 @@ namespace TestOpenStack
 
             try
             {
-                L_lastExec.Text = server.Launched.Value.ToString();
+                L_lastExec.Text = server.Launched.Value.DateTime.ToString();
             }
             catch (Exception ex)
             {
@@ -259,7 +259,7 @@ namespace TestOpenStack
 
                 foreach (ServerActionSummary action in listActions)
                 {
-                    DGV_actionVm_tmp.Rows.Add(action.Name, action.Started);
+                    DGV_actionVm_tmp.Rows.Add(action.Name, action.Started.DateTime);
                 }
 
                 DGV_actionVm = DGV_actionVm_tmp;
