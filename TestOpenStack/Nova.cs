@@ -46,6 +46,7 @@ namespace TestOpenStack
             catch (Exception ex){ }
         }
 
+
         private async void B_suppr_VM_Click(object sender, EventArgs e)
         {
             /* message de confirmation */
@@ -81,7 +82,7 @@ namespace TestOpenStack
             }
         }
 
-        private async void consoleInterface(Server s)
+        /*private async void consoleInterface(Server s)
         {
             try
             {
@@ -94,7 +95,7 @@ namespace TestOpenStack
             {
 
             }
-        }
+        }*/
 
         private async void B_stop_Click(object sender, EventArgs e)
         {
@@ -243,11 +244,11 @@ namespace TestOpenStack
                 L_lastExec.Text = "Non rensigné";
             }
 
-            try
+            /*try
             {
                 consoleInterface(server);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { }*/
 
             try
             {
@@ -286,7 +287,7 @@ namespace TestOpenStack
 
         private async void refreshJournal(object sender, EventArgs e)
         {
-            if (DGV_listVM.Rows.Count > 0)
+            /*if (DGV_listVM.Rows.Count > 0)
             {
                 try
                 {
@@ -302,7 +303,7 @@ namespace TestOpenStack
 
                 }
                 catch (Exception ex) { }
-            }
+            }*/
         }
 
         private async void refreshInterface(object sender, EventArgs e)

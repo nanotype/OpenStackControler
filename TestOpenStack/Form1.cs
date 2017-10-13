@@ -45,7 +45,7 @@ namespace TestOpenStack
             }
 
             // fonction de création des interfaces
-            //glanceInterface();
+            glanceInterface();
             novaInterface();
 
         }
@@ -53,8 +53,8 @@ namespace TestOpenStack
         public void glanceInterface()
         {
             G = new Glance();
-            G.Visible = true;
-            SM_affiche_glance.Checked = true;
+            G.Visible = false;
+            SM_affiche_glance.Checked = false;
         }
 
         public void novaInterface()

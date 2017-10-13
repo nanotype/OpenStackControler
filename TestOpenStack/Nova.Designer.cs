@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.L_id = new System.Windows.Forms.Label();
             this.L_progress = new System.Windows.Forms.Label();
             this.L_IPV6 = new System.Windows.Forms.Label();
@@ -69,8 +69,6 @@
             this.B_stop = new System.Windows.Forms.Button();
             this.B_resume = new System.Windows.Forms.Button();
             this.B_suspend = new System.Windows.Forms.Button();
-            this.TP_console = new System.Windows.Forms.TabPage();
-            this.RTB_console = new System.Windows.Forms.RichTextBox();
             this.DGV_listVM = new System.Windows.Forms.DataGridView();
             this.VM_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vmStatus = new System.Windows.Forms.DataGridViewImageColumn();
@@ -85,7 +83,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.TP_console.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).BeginInit();
             this.SuspendLayout();
             // 
@@ -342,7 +339,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TP_general);
-            this.tabControl1.Controls.Add(this.TP_console);
             this.tabControl1.Location = new System.Drawing.Point(261, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -488,26 +484,6 @@
             this.B_suspend.UseVisualStyleBackColor = true;
             this.B_suspend.Click += new System.EventHandler(this.B_suspend_Click);
             // 
-            // TP_console
-            // 
-            this.TP_console.Controls.Add(this.RTB_console);
-            this.TP_console.Location = new System.Drawing.Point(4, 22);
-            this.TP_console.Name = "TP_console";
-            this.TP_console.Padding = new System.Windows.Forms.Padding(3);
-            this.TP_console.Size = new System.Drawing.Size(753, 394);
-            this.TP_console.TabIndex = 1;
-            this.TP_console.Text = "Journal";
-            this.TP_console.UseVisualStyleBackColor = true;
-            // 
-            // RTB_console
-            // 
-            this.RTB_console.Location = new System.Drawing.Point(6, 6);
-            this.RTB_console.Name = "RTB_console";
-            this.RTB_console.ReadOnly = true;
-            this.RTB_console.Size = new System.Drawing.Size(741, 382);
-            this.RTB_console.TabIndex = 0;
-            this.RTB_console.Text = "";
-            // 
             // DGV_listVM
             // 
             this.DGV_listVM.AllowUserToAddRows = false;
@@ -522,8 +498,8 @@
             this.DGV_listVM.Name = "DGV_listVM";
             this.DGV_listVM.ReadOnly = true;
             this.DGV_listVM.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGV_listVM.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGV_listVM.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_listVM.RowTemplate.Height = 35;
             this.DGV_listVM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_listVM.Size = new System.Drawing.Size(240, 525);
@@ -560,7 +536,6 @@
             // 
             // T_refresh_journal
             // 
-            this.T_refresh_journal.Enabled = true;
             this.T_refresh_journal.Interval = 1000;
             this.T_refresh_journal.Tick += new System.EventHandler(this.refreshJournal);
             // 
@@ -581,9 +556,8 @@
             this.Controls.Add(this.B_ajout_VM);
             this.MaximizeBox = false;
             this.Name = "Nova";
-            this.ShowInTaskbar = false;
+            this.ShowIcon = false;
             this.Text = "Nova";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.DGV_actionVm)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.TP_general.ResumeLayout(false);
@@ -595,7 +569,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.TP_console.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).EndInit();
             this.ResumeLayout(false);
 
@@ -629,9 +602,7 @@
         private System.Windows.Forms.Label L_id;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TP_general;
-        private System.Windows.Forms.TabPage TP_console;
         private System.Windows.Forms.Button B_suppr_VM;
-        private System.Windows.Forms.RichTextBox RTB_console;
         private System.Windows.Forms.DataGridView DGV_listVM;
         private System.Windows.Forms.Timer T_refresh_VM;
         private System.Windows.Forms.Timer T_refresh_journal;
