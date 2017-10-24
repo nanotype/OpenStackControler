@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.L_id = new System.Windows.Forms.Label();
             this.L_progress = new System.Windows.Forms.Label();
             this.L_IPV6 = new System.Windows.Forms.Label();
@@ -498,8 +498,8 @@
             this.DGV_listVM.Name = "DGV_listVM";
             this.DGV_listVM.ReadOnly = true;
             this.DGV_listVM.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGV_listVM.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGV_listVM.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_listVM.RowTemplate.Height = 35;
             this.DGV_listVM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_listVM.Size = new System.Drawing.Size(240, 525);

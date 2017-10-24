@@ -16,7 +16,7 @@ namespace TestOpenStack
         public Nova()
         {
             InitializeComponent();
-            listVM();
+            //listVM();
         }
 
         public async void listVM()
@@ -26,24 +26,43 @@ namespace TestOpenStack
                 //DGV_listVM.Rows.Clear();
                 IPage<Server> listServer = await compute.ListServersAsync();
                 DataGridView newDGV = DGV_listVM;
+                Identifier selectedServerID=null;
+                if (DGV_listVM.Rows.Count > 0)
+                {
+                    selectedServerID = (Identifier) DGV_listVM.SelectedRows[0].Cells[0].Value;
+                }
                 newDGV.Rows.Clear();
                 foreach (Server server in listServer)
                 {
                     try
                     {
                         newDGV.Rows.Add(server.Id, GetImageVmStatus(server.Status.DisplayName), server.Name);
+                        if(selectedServerID!=null && selectedServerID.Equals(server.Id))
+                        {
+                            newDGV.Rows[newDGV.Rows.GetLastRow(DataGridViewElementStates.None)].Selected = true;
+                        }
                     }
-                    catch (Exception ex) { }
+                    catch (Exception ex) {
+                        //MessageBox.Show(ex.Message);
+                    }
                 }
                 try
                 {
-                    int idxRowSelected = DGV_listVM.FirstDisplayedScrollingRowIndex;
+                   /* int idxRowSelected=0;
+                    if (DGV_listVM.Rows.Count > 0)
+                    {
+                        idxRowSelected = DGV_listVM.CurrentCell.RowIndex;
+                    }
+                    newDGV.Rows[idxRowSelected].Selected=true;*/
                     DGV_listVM = newDGV;
-                    DGV_listVM.FirstDisplayedScrollingRowIndex = idxRowSelected;
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) {
+                    //MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex){ }
+            catch (Exception ex){
+               // MessageBox.Show(ex.Message);
+            }
         }
 
 
