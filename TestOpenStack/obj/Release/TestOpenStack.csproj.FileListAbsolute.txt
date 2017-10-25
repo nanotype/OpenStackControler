@@ -24,3 +24,28 @@ C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\Test
 C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Release\TestOpenStack.csproj.GenerateResource.Cache
 C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Release\TestOpenStack.exe
 C:\Users\victor\Desktop\Mes affaires\ISITECH\bac+4\Projet\Dev\TestOpenStack\TestOpenStack\obj\Release\TestOpenStack.pdb
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\config.xml
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\TestOpenStack.exe.config
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\TestOpenStack.exe
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\TestOpenStack.pdb
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Flurl.dll
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Flurl.Http.dll
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Marvin.JsonPatch.dll
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Newtonsoft.Json.dll
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\openstacknet.dll
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Flurl.pdb
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Flurl.xml
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Flurl.Http.pdb
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Flurl.Http.xml
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\Newtonsoft.Json.xml
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\openstacknet.pdb
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\bin\Release\openstacknet.xml
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.confirmationSuppression.resources
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.Nova.resources
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.Form1.resources
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.preCreationInstance.resources
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.Properties.Resources.resources
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.Glance.resources
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.csproj.GenerateResource.Cache
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.exe
+C:\Programmation\satc-app\OpenStack-App\TestOpenStack\obj\Release\TestOpenStack.pdb
