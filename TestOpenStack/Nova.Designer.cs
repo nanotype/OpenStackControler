@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.L_id = new System.Windows.Forms.Label();
             this.L_progress = new System.Windows.Forms.Label();
             this.L_IPV6 = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@
             // L_lastExec
             // 
             this.L_lastExec.AutoSize = true;
-            this.L_lastExec.Location = new System.Drawing.Point(119, 81);
+            this.L_lastExec.Location = new System.Drawing.Point(15, 102);
             this.L_lastExec.Name = "L_lastExec";
             this.L_lastExec.Size = new System.Drawing.Size(64, 13);
             this.L_lastExec.TabIndex = 20;
@@ -189,9 +189,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(7, 106);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 13);
+            this.label11.Size = new System.Drawing.Size(124, 13);
             this.label11.TabIndex = 13;
-            this.label11.Text = "configuration du disque :";
+            this.label11.Text = "Configuration du disque :";
             // 
             // label10
             // 
@@ -207,9 +207,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(12, 32);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 11;
-            this.label9.Text = "adresse IPV4 :";
+            this.label9.Text = "Adresse IPV4 :";
             // 
             // label8
             // 
@@ -225,9 +225,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 66);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 9;
-            this.label7.Text = "adresse IPV6 :";
+            this.label7.Text = "Adresse IPV6 :";
             // 
             // label6
             // 
@@ -241,11 +241,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 82);
+            this.label5.Location = new System.Drawing.Point(15, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 13);
+            this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 7;
-            this.label5.Text = "dernière execution :";
+            this.label5.Text = "Dernière execution :";
             // 
             // L_nom
             // 
@@ -498,8 +498,8 @@
             this.DGV_listVM.Name = "DGV_listVM";
             this.DGV_listVM.ReadOnly = true;
             this.DGV_listVM.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGV_listVM.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGV_listVM.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_listVM.RowTemplate.Height = 35;
             this.DGV_listVM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_listVM.Size = new System.Drawing.Size(240, 525);

@@ -61,7 +61,7 @@
             // TB_zone_deverouillage
             // 
             this.TB_zone_deverouillage.Location = new System.Drawing.Point(13, 100);
-            this.TB_zone_deverouillage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_zone_deverouillage.Margin = new System.Windows.Forms.Padding(4);
             this.TB_zone_deverouillage.Name = "TB_zone_deverouillage";
             this.TB_zone_deverouillage.Size = new System.Drawing.Size(398, 22);
             this.TB_zone_deverouillage.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.B_supprimer.Enabled = false;
             this.B_supprimer.Location = new System.Drawing.Point(13, 130);
-            this.B_supprimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.B_supprimer.Margin = new System.Windows.Forms.Padding(4);
             this.B_supprimer.Name = "B_supprimer";
             this.B_supprimer.Size = new System.Drawing.Size(234, 28);
             this.B_supprimer.TabIndex = 3;
@@ -82,7 +82,7 @@
             // B_annuler
             // 
             this.B_annuler.Location = new System.Drawing.Point(255, 130);
-            this.B_annuler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.B_annuler.Margin = new System.Windows.Forms.Padding(4);
             this.B_annuler.Name = "B_annuler";
             this.B_annuler.Size = new System.Drawing.Size(156, 28);
             this.B_annuler.TabIndex = 4;
@@ -134,9 +134,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "confirmationSuppression";
-            this.Text = "confirmationSuppression";
+            this.Text = "Confirmation de suppression";
             this.ResumeLayout(false);
             this.PerformLayout();
 
