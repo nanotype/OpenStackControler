@@ -1,0 +1,10 @@
+
+TestOpenStack/bin/Debug/
+
+TestOpenStack/bin/Release/
+
+TestOpenStack/obj/Debug/
+
+TestOpenStack/obj/Release/
+
+\.vs/OpenSATC/v14/\.suo

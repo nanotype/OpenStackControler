@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Glance));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.L_nom = new System.Windows.Forms.Label();
             this.L_type = new System.Windows.Forms.Label();
@@ -305,6 +306,7 @@
             this.Controls.Add(this.DGV_list_flavor);
             this.Controls.Add(this.DGV_list_image);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Glance";
             this.ShowInTaskbar = false;
             this.Text = "Glance";
