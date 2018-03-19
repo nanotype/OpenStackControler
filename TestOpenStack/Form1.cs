@@ -2,7 +2,7 @@
 using System.Xml;
 using System;
 using net.openstack.Core.Domain;
-using System.Collections.Generic;
+using System.Drawing;
 
 namespace TestOpenStack
 {
@@ -12,42 +12,18 @@ namespace TestOpenStack
         private Glance G;
         private Nova N;
 
-        public Form1()
+        public Form1(connect connection)
         {
             InitializeComponent();
+            connexion = connection;
             connectToServer();
         }
 
         public void connectToServer()
         {
-            // création de l'objet XML et chargement du fichier de configuration
-            XmlDocument docXml = new XmlDocument();
-            docXml.Load("config.xml");
-
-            // lecture du fichier de configuration XML
-            // /!\ Ne prend qu'une seul configuration pour le moment /!\
-            try
-            {
-                XmlNodeList listInfra = docXml.GetElementsByTagName("infra");
-                for (int i = 0; i < listInfra.Count; i++)
-                {
-                    string URI = listInfra[i].ChildNodes[0].InnerXml;
-                    string login = listInfra[i].ChildNodes[1].InnerXml;
-                    string password = listInfra[i].ChildNodes[2].InnerXml;
-                    string project = listInfra[i].ChildNodes[3].InnerXml;
-
-                    connexion = new connect(URI, login, password, project);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
             // fonction de création des interfaces
             glanceInterface();
             novaInterface();
-
         }
 
         public void glanceInterface()
@@ -59,14 +35,27 @@ namespace TestOpenStack
 
         public void novaInterface()
         {
+            //N.Visible = true;
+            // ferme toutes les fenetres MdiChild active et amène le panel d'accueil au dernier plan
+
+            if (ActiveMdiChild != null) ActiveMdiChild.Close();
+
             N = new Nova();
-            N.Visible = true;
+            N.TopLevel = false;
+            N.Parent = P_interface;
+            N.TopLevel = false;
+            N.Size = P_interface.ClientSize;
+            N.Dock = DockStyle.Fill;
+            N.BringToFront();
+            N.Show();
+            N.Location = new Point(0, 0);
+
             SM_affiche_nova.Checked = true;
         }
 
         private void changeStateNova(object sender, System.EventArgs e)
         {
-            if(N.Visible == true)
+            if (N.Visible == true)
             {
                 //si la fenetre de nova est visible, on la cache
                 N.Close();
@@ -116,7 +105,6 @@ namespace TestOpenStack
                 SM_affiche_glance.Checked = false;
             }
         }
-
 
         private void fonctionTest()
         {

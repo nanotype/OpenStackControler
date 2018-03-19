@@ -13,7 +13,17 @@ namespace TestOpenStack
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            interfaceConnexion IC = new interfaceConnexion();
+            DialogResult successfullConnection = IC.ShowDialog();
+            if(successfullConnection == DialogResult.Yes)
+            {
+                Application.Run(new Form1(IC.getConnection()));
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

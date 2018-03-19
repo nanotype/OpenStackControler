@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <openstack>
   <infra>
-    <URI>http://46.105.224.231:5000/v2.0</URI>
-    <login>admin</login>
-    <password>mgall</password>
-    <project>admin</project>
+    <URI>http://openstack.iphtest.tk:5000/v2.0</URI>
+    <login></login>
+    <password></password>
+    <project></project>
   </infra>
 </openstack>

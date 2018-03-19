@@ -71,12 +71,19 @@
             this.B_resume = new System.Windows.Forms.Button();
             this.B_suspend = new System.Windows.Forms.Button();
             this.DGV_listVM = new System.Windows.Forms.DataGridView();
-            this.VM_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vmStatus = new System.Windows.Forms.DataGridViewImageColumn();
-            this.VM_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T_refresh_VM = new System.Windows.Forms.Timer(this.components);
             this.T_refresh_journal = new System.Windows.Forms.Timer(this.components);
             this.T_refresh_interface = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redémarerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arreterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reprendreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VM_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vmStatus = new System.Windows.Forms.DataGridViewImageColumn();
+            this.VM_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_actionVm)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.TP_general.SuspendLayout();
@@ -85,6 +92,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // L_id
@@ -507,32 +515,10 @@
             this.DGV_listVM.TabIndex = 26;
             this.DGV_listVM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectVM);
             // 
-            // VM_id
-            // 
-            this.VM_id.HeaderText = "ID";
-            this.VM_id.Name = "VM_id";
-            this.VM_id.ReadOnly = true;
-            this.VM_id.Visible = false;
-            // 
-            // vmStatus
-            // 
-            this.vmStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.vmStatus.HeaderText = "Status";
-            this.vmStatus.Name = "vmStatus";
-            this.vmStatus.ReadOnly = true;
-            this.vmStatus.Width = 43;
-            // 
-            // VM_name
-            // 
-            this.VM_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.VM_name.HeaderText = "nom des instances";
-            this.VM_name.Name = "VM_name";
-            this.VM_name.ReadOnly = true;
-            // 
             // T_refresh_VM
             // 
             this.T_refresh_VM.Enabled = true;
-            this.T_refresh_VM.Interval = 1000;
+            this.T_refresh_VM.Interval = 5000;
             this.T_refresh_VM.Tick += new System.EventHandler(this.refresh_list_VM);
             // 
             // T_refresh_journal
@@ -543,8 +529,86 @@
             // T_refresh_interface
             // 
             this.T_refresh_interface.Enabled = true;
-            this.T_refresh_interface.Interval = 1000;
+            this.T_refresh_interface.Interval = 5000;
             this.T_refresh_interface.Tick += new System.EventHandler(this.refreshInterface);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testToolStripMenuItem,
+            this.redémarerToolStripMenuItem,
+            this.arreterToolStripMenuItem,
+            this.reprendreToolStripMenuItem,
+            this.pauseToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(132, 136);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.testToolStripMenuItem.Text = "Démarer";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
+            // redémarerToolStripMenuItem
+            // 
+            this.redémarerToolStripMenuItem.Name = "redémarerToolStripMenuItem";
+            this.redémarerToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.redémarerToolStripMenuItem.Text = "Redémarer";
+            this.redémarerToolStripMenuItem.Click += new System.EventHandler(this.redémarerToolStripMenuItem_Click);
+            // 
+            // arreterToolStripMenuItem
+            // 
+            this.arreterToolStripMenuItem.Name = "arreterToolStripMenuItem";
+            this.arreterToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.arreterToolStripMenuItem.Text = "Arreter";
+            this.arreterToolStripMenuItem.Click += new System.EventHandler(this.arreterToolStripMenuItem_Click);
+            // 
+            // reprendreToolStripMenuItem
+            // 
+            this.reprendreToolStripMenuItem.Name = "reprendreToolStripMenuItem";
+            this.reprendreToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.reprendreToolStripMenuItem.Text = "Reprendre";
+            this.reprendreToolStripMenuItem.Click += new System.EventHandler(this.reprendreToolStripMenuItem_Click);
+            // 
+            // pauseToolStripMenuItem
+            // 
+            this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.pauseToolStripMenuItem.Text = "Pause";
+            this.pauseToolStripMenuItem.Click += new System.EventHandler(this.pauseToolStripMenuItem_Click);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
+            // 
+            // VM_id
+            // 
+            this.VM_id.HeaderText = "ID";
+            this.VM_id.Name = "VM_id";
+            this.VM_id.ReadOnly = true;
+            this.VM_id.Visible = false;
+            // 
+            // vmStatus
+            // 
+            this.vmStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.vmStatus.ContextMenuStrip = this.contextMenuStrip1;
+            this.vmStatus.HeaderText = "Status";
+            this.vmStatus.Name = "vmStatus";
+            this.vmStatus.ReadOnly = true;
+            this.vmStatus.Width = 43;
+            // 
+            // VM_name
+            // 
+            this.VM_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.VM_name.ContextMenuStrip = this.contextMenuStrip1;
+            this.VM_name.HeaderText = "nom des instances";
+            this.VM_name.Name = "VM_name";
+            this.VM_name.ReadOnly = true;
             // 
             // Nova
             // 
@@ -555,10 +619,12 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.DGV_actionVm);
             this.Controls.Add(this.B_ajout_VM);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Nova";
             this.Text = "Nova";
+            this.Activated += new System.EventHandler(this.Nova_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_actionVm)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.TP_general.ResumeLayout(false);
@@ -571,6 +637,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -617,10 +684,17 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actionType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn action;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redémarerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arreterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reprendreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pauseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn VM_id;
         private System.Windows.Forms.DataGridViewImageColumn vmStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn VM_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn actionType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn action;
     }
 }

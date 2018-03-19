@@ -6,11 +6,12 @@ using System.Windows.Forms;
 
 namespace TestOpenStack
 {
-    class connect
+    public class connect
     {
         private CloudIdentityWithProject serverConnection;
         private static OpenStackIdentityProvider OpenStackConnection;
         private static UserAccess UA;
+        public bool error=false;
 
         public connect(string URI, string login, string password, string project)
         {
@@ -43,7 +44,8 @@ namespace TestOpenStack
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
+                error = true;
             }
         }
 

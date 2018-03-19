@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publier\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +50,10 @@
   <PropertyGroup>
     <ApplicationIcon>logo_opensatc.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Flurl, Version=1.0.10.0, Culture=neutral, PublicKeyToken=1308302a96879dfb, processorArchitecture=MSIL">
       <HintPath>..\packages\Flurl.Signed.1.0.10\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+MonoTouch10\Flurl.dll</HintPath>
@@ -42,6 +61,10 @@
     </Reference>
     <Reference Include="Flurl.Http, Version=0.7.0.0, Culture=neutral, PublicKeyToken=1308302a96879dfb, processorArchitecture=MSIL">
       <HintPath>..\packages\Flurl.Http.Signed.0.7.0\lib\net45\Flurl.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Marvin.JsonPatch, Version=0.7.0.0, Culture=neutral, PublicKeyToken=686c63b2d045ab44, processorArchitecture=MSIL">
@@ -75,6 +98,12 @@
     <Compile Include="confirmationSuppression.Designer.cs">
       <DependentUpon>confirmationSuppression.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaceConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaceConnexion.Designer.cs">
+      <DependentUpon>interfaceConnexion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nova.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="confirmationSuppression.resx">
       <DependentUpon>confirmationSuppression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaceConnexion.resx">
+      <DependentUpon>interfaceConnexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nova.resx">
       <DependentUpon>Nova.cs</DependentUpon>
@@ -148,12 +180,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="logo_opensatc.ico" />
+    <None Include="Resources\waiting-OpenSATC.gif" />
+    <None Include="Resources\waiting.gif" />
+    <None Include="Resources\unnamed.png" />
     <None Include="Resources\ic_delete_forever_black_48dp_1x.png" />
     <None Include="Resources\ic_stop_black_48dp_1x.png" />
     <None Include="Resources\ic_replay_black_48dp_1x.png" />
     <None Include="Resources\ic_play_arrow_black_48dp_1x.png" />
     <None Include="Resources\ic_pause_black_48dp_1x.png" />
     <None Include="Resources\ic_error_black_48dp_1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

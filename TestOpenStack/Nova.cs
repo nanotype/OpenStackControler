@@ -61,7 +61,7 @@ namespace TestOpenStack
                 }
             }
             catch (Exception ex){
-               // MessageBox.Show(ex.Message);
+               //MessageBox.Show(ex.Message);
             }
         }
 
@@ -69,17 +69,9 @@ namespace TestOpenStack
         private async void B_suppr_VM_Click(object sender, EventArgs e)
         {
             /* message de confirmation */
-            /*DialogResult result = MessageBox.Show("Attention, vous etes sur le point de supprimer une instance d'un serveur." + '\n' + "Voulez vous vraiment la supprimer ?", "Demande de suppression d'instance virtuelle", MessageBoxButtons.YesNo);
-
-             if (result == DialogResult.Yes)
-             {
-                 Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
-                 await server.DeleteAsync();
-             }*/
             Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
             confirmationSuppression confirmSuppress = new confirmationSuppression(server);
             confirmSuppress.ShowDialog();
-            //confirmSuppress.Visible = true;
         }
 
         private void B_ajout_VM_Click(object sender, EventArgs e)
@@ -180,7 +172,9 @@ namespace TestOpenStack
                     LB_volume.Items.Add(V.Name);
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                //MessageBox.Show(ex.Message);
+            }
 
             try
             {
@@ -285,7 +279,9 @@ namespace TestOpenStack
                 DGV_actionVm = DGV_actionVm_tmp;
                 DGV_actionVm.FirstDisplayedScrollingRowIndex = idxRowSelected;
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                //MessageBox.Show(ex.Message);
+            }
         }
 
         private async void selectVM(object sender, DataGridViewCellEventArgs e)
@@ -304,7 +300,7 @@ namespace TestOpenStack
             listVM();
         }
 
-        private async void refreshJournal(object sender, EventArgs e)
+        private void refreshJournal(object sender, EventArgs e)
         {
             /*if (DGV_listVM.Rows.Count > 0)
             {
@@ -337,7 +333,9 @@ namespace TestOpenStack
                     load_VM_Information(server);
 
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) {
+                    //MessageBox.Show(ex.Message);
+                }
 
             }
         }
@@ -456,6 +454,85 @@ namespace TestOpenStack
             B_resume.Enabled = resume;
             B_suspend.Enabled = suspend;
             B_suppr_VM.Enabled = delete;
+        }
+
+        private void Nova_Activated(object sender, EventArgs e)
+        {
+            T_refresh_interface.Enabled = true;
+            T_refresh_VM.Enabled = true;
+        }
+
+        private async void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
+            try
+            {
+                await server.StartAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("l'erreur suivante s'est produite :" + '\n' + ex.Message);
+            }
+        }
+
+        private async void arreterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
+            try
+            {
+                await server.StopAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("l'erreur suivante s'est produite :" + '\n' + ex.Message);
+            }
+        }
+
+        private async void redémarerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
+            try
+            {
+                await server.RebootAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("l'erreur suivante s'est produite :" + '\n' + ex.Message);
+            }
+        }
+
+        private async void reprendreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
+            try
+            {
+                await server.ResumeAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("l'erreur suivante s'est produite :" + '\n' + ex.Message);
+            }
+        }
+
+        private async void pauseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
+            try
+            {
+                await server.SuspendAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("l'erreur suivante s'est produite :" + '\n' + ex.Message);
+            }
+        }
+
+        private async void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /* message de confirmation */
+            Server server = await compute.GetServerAsync((Identifier)DGV_listVM.SelectedRows[0].Cells[0].Value);
+            confirmationSuppression confirmSuppress = new confirmationSuppression(server);
+            confirmSuppress.ShowDialog();
         }
     }
 }
