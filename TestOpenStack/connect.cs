@@ -2,16 +2,20 @@
 using net.openstack.Core.Providers;
 using System;
 using System.Linq;
-using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace TestOpenStack
 {
     public class connect
     {
+        //attribut de connexion OpenStack
         private CloudIdentityWithProject serverConnection;
         private static OpenStackIdentityProvider OpenStackConnection;
         private static UserAccess UA;
         public bool error=false;
+
+        //attribut de connexion à la base de données
+        private static MySqlConnection mySqlConnection;
 
         public connect(string URI, string login, string password, string project)
         {
@@ -24,6 +28,7 @@ namespace TestOpenStack
             };
 
             authentification(serverLink);
+            InitConnexionToMysql();
         }
 
         private void authentification(Uri serverLink)
@@ -57,6 +62,18 @@ namespace TestOpenStack
         public static IdentityToken GetIdentityToken()
         {
             return UA.Token;
+        }
+
+        private void InitConnexionToMysql()
+        {
+            // Création de la chaîne de connexion
+            string connectionString = "SERVER=openstack.tk; DATABASE=opensatc; user=root; PASSWORD=mgall";
+            mySqlConnection = new MySqlConnection(connectionString);
+        }
+
+        public static MySqlConnection GetMysqlConnection()
+        {
+            return mySqlConnection;
         }
     }
 }

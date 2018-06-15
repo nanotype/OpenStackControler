@@ -3,6 +3,9 @@ using System.Xml;
 using System;
 using net.openstack.Core.Domain;
 using System.Drawing;
+using NLog.Config;
+using NLog.Targets;
+using NLog;
 
 namespace TestOpenStack
 {
@@ -12,11 +15,34 @@ namespace TestOpenStack
         private Glance G;
         private Nova N;
 
+        static public Logger log;
+
         public Form1(connect connection)
         {
             InitializeComponent();
+            initializeLogSystem();
             connexion = connection;
             connectToServer();
+        }
+
+        private void initializeLogSystem()
+        {
+            LoggingConfiguration config = new LoggingConfiguration();
+            FileTarget logFile = new FileTarget() { FileName = "Trace.log", Name = "Trace" };
+            //ConsoleTarget logConsole = new ConsoleTarget() { Name = "logConsole" };
+
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Error, logFile));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, logFile));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Fatal, logFile));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Info, logFile));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, logFile));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Warn, logFile));
+
+            LogManager.Configuration = config;
+
+            log = LogManager.GetCurrentClassLogger();
+
+            log.Info("connection à l'application réussi.");
         }
 
         public void connectToServer()

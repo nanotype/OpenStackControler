@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nova));
             this.L_id = new System.Windows.Forms.Label();
             this.L_progress = new System.Windows.Forms.Label();
@@ -71,9 +72,8 @@
             this.B_resume = new System.Windows.Forms.Button();
             this.B_suspend = new System.Windows.Forms.Button();
             this.DGV_listVM = new System.Windows.Forms.DataGridView();
-            this.T_refresh_VM = new System.Windows.Forms.Timer(this.components);
-            this.T_refresh_journal = new System.Windows.Forms.Timer(this.components);
-            this.T_refresh_interface = new System.Windows.Forms.Timer(this.components);
+            this.VM_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vmStatus = new System.Windows.Forms.DataGridViewImageColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redémarerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,9 +81,16 @@
             this.reprendreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VM_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vmStatus = new System.Windows.Forms.DataGridViewImageColumn();
             this.VM_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_refresh_VM = new System.Windows.Forms.Timer(this.components);
+            this.T_refresh_listCommande = new System.Windows.Forms.Timer(this.components);
+            this.T_refresh_interface = new System.Windows.Forms.Timer(this.components);
+            this.DGV_listCommande = new System.Windows.Forms.DataGridView();
+            this.ID_command = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numCommande = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMS_refreshCommande_command = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.rafraichirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_actionVm)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.TP_general.SuspendLayout();
@@ -93,6 +100,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_listCommande)).BeginInit();
+            this.CMS_refreshCommande_command.SuspendLayout();
             this.SuspendLayout();
             // 
             // L_id
@@ -304,7 +313,7 @@
             // 
             // B_ajout_VM
             // 
-            this.B_ajout_VM.Location = new System.Drawing.Point(13, 543);
+            this.B_ajout_VM.Location = new System.Drawing.Point(268, 543);
             this.B_ajout_VM.Name = "B_ajout_VM";
             this.B_ajout_VM.Size = new System.Drawing.Size(242, 23);
             this.B_ajout_VM.TabIndex = 2;
@@ -321,7 +330,7 @@
             this.DGV_actionVm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.actionType,
             this.action});
-            this.DGV_actionVm.Location = new System.Drawing.Point(261, 438);
+            this.DGV_actionVm.Location = new System.Drawing.Point(516, 438);
             this.DGV_actionVm.MultiSelect = false;
             this.DGV_actionVm.Name = "DGV_actionVm";
             this.DGV_actionVm.ReadOnly = true;
@@ -348,7 +357,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TP_general);
-            this.tabControl1.Location = new System.Drawing.Point(261, 12);
+            this.tabControl1.Location = new System.Drawing.Point(516, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(761, 420);
@@ -502,7 +511,7 @@
             this.VM_id,
             this.vmStatus,
             this.VM_name});
-            this.DGV_listVM.Location = new System.Drawing.Point(12, 12);
+            this.DGV_listVM.Location = new System.Drawing.Point(267, 12);
             this.DGV_listVM.MultiSelect = false;
             this.DGV_listVM.Name = "DGV_listVM";
             this.DGV_listVM.ReadOnly = true;
@@ -515,22 +524,21 @@
             this.DGV_listVM.TabIndex = 26;
             this.DGV_listVM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectVM);
             // 
-            // T_refresh_VM
+            // VM_id
             // 
-            this.T_refresh_VM.Enabled = true;
-            this.T_refresh_VM.Interval = 5000;
-            this.T_refresh_VM.Tick += new System.EventHandler(this.refresh_list_VM);
+            this.VM_id.HeaderText = "ID";
+            this.VM_id.Name = "VM_id";
+            this.VM_id.ReadOnly = true;
+            this.VM_id.Visible = false;
             // 
-            // T_refresh_journal
+            // vmStatus
             // 
-            this.T_refresh_journal.Interval = 1000;
-            this.T_refresh_journal.Tick += new System.EventHandler(this.refreshJournal);
-            // 
-            // T_refresh_interface
-            // 
-            this.T_refresh_interface.Enabled = true;
-            this.T_refresh_interface.Interval = 5000;
-            this.T_refresh_interface.Tick += new System.EventHandler(this.refreshInterface);
+            this.vmStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.vmStatus.ContextMenuStrip = this.contextMenuStrip1;
+            this.vmStatus.HeaderText = "Status";
+            this.vmStatus.Name = "vmStatus";
+            this.vmStatus.ReadOnly = true;
+            this.vmStatus.Width = 43;
             // 
             // contextMenuStrip1
             // 
@@ -586,22 +594,6 @@
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
-            // VM_id
-            // 
-            this.VM_id.HeaderText = "ID";
-            this.VM_id.Name = "VM_id";
-            this.VM_id.ReadOnly = true;
-            this.VM_id.Visible = false;
-            // 
-            // vmStatus
-            // 
-            this.vmStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.vmStatus.ContextMenuStrip = this.contextMenuStrip1;
-            this.vmStatus.HeaderText = "Status";
-            this.vmStatus.Name = "vmStatus";
-            this.vmStatus.ReadOnly = true;
-            this.vmStatus.Width = 43;
-            // 
             // VM_name
             // 
             this.VM_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -610,11 +602,88 @@
             this.VM_name.Name = "VM_name";
             this.VM_name.ReadOnly = true;
             // 
+            // T_refresh_VM
+            // 
+            this.T_refresh_VM.Enabled = true;
+            this.T_refresh_VM.Interval = 5000;
+            this.T_refresh_VM.Tick += new System.EventHandler(this.refresh_list_VM);
+            // 
+            // T_refresh_listCommande
+            // 
+            this.T_refresh_listCommande.Enabled = true;
+            this.T_refresh_listCommande.Interval = 30000;
+            this.T_refresh_listCommande.Tick += new System.EventHandler(this.T_refresh_listCommande_Tick);
+            // 
+            // T_refresh_interface
+            // 
+            this.T_refresh_interface.Enabled = true;
+            this.T_refresh_interface.Interval = 5000;
+            this.T_refresh_interface.Tick += new System.EventHandler(this.refreshInterface);
+            // 
+            // DGV_listCommande
+            // 
+            this.DGV_listCommande.AllowUserToAddRows = false;
+            this.DGV_listCommande.AllowUserToDeleteRows = false;
+            this.DGV_listCommande.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.DGV_listCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_listCommande.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_command,
+            this.numCommande,
+            this.content});
+            this.DGV_listCommande.ContextMenuStrip = this.CMS_refreshCommande_command;
+            this.DGV_listCommande.Location = new System.Drawing.Point(12, 12);
+            this.DGV_listCommande.MultiSelect = false;
+            this.DGV_listCommande.Name = "DGV_listCommande";
+            this.DGV_listCommande.RowHeadersVisible = false;
+            this.DGV_listCommande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_listCommande.Size = new System.Drawing.Size(249, 554);
+            this.DGV_listCommande.TabIndex = 27;
+            this.DGV_listCommande.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_listCommande_CellDoubleClick);
+            // 
+            // ID_command
+            // 
+            this.ID_command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID_command.HeaderText = "ID";
+            this.ID_command.Name = "ID_command";
+            this.ID_command.ReadOnly = true;
+            this.ID_command.Visible = false;
+            // 
+            // numCommande
+            // 
+            this.numCommande.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.numCommande.HeaderText = "Commande N°";
+            this.numCommande.Name = "numCommande";
+            this.numCommande.ReadOnly = true;
+            // 
+            // content
+            // 
+            this.content.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.content.DefaultCellStyle = dataGridViewCellStyle2;
+            this.content.HeaderText = "Description";
+            this.content.Name = "content";
+            this.content.ReadOnly = true;
+            // 
+            // CMS_refreshCommande_command
+            // 
+            this.CMS_refreshCommande_command.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rafraichirToolStripMenuItem});
+            this.CMS_refreshCommande_command.Name = "CMS_refreshCommande_command";
+            this.CMS_refreshCommande_command.Size = new System.Drawing.Size(125, 26);
+            // 
+            // rafraichirToolStripMenuItem
+            // 
+            this.rafraichirToolStripMenuItem.Name = "rafraichirToolStripMenuItem";
+            this.rafraichirToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.rafraichirToolStripMenuItem.Text = "Rafraichir";
+            this.rafraichirToolStripMenuItem.Click += new System.EventHandler(this.rafraichirToolStripMenuItem_Click);
+            // 
             // Nova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 578);
+            this.ClientSize = new System.Drawing.Size(1290, 578);
+            this.Controls.Add(this.DGV_listCommande);
             this.Controls.Add(this.DGV_listVM);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.DGV_actionVm);
@@ -638,6 +707,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_listVM)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_listCommande)).EndInit();
+            this.CMS_refreshCommande_command.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -673,7 +744,7 @@
         private System.Windows.Forms.Button B_suppr_VM;
         private System.Windows.Forms.DataGridView DGV_listVM;
         private System.Windows.Forms.Timer T_refresh_VM;
-        private System.Windows.Forms.Timer T_refresh_journal;
+        private System.Windows.Forms.Timer T_refresh_listCommande;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button B_reboot;
         private System.Windows.Forms.Button B_VM_Start;
@@ -696,5 +767,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VM_id;
         private System.Windows.Forms.DataGridViewImageColumn vmStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn VM_name;
+        private System.Windows.Forms.DataGridView DGV_listCommande;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_command;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numCommande;
+        private System.Windows.Forms.DataGridViewTextBoxColumn content;
+        private System.Windows.Forms.ContextMenuStrip CMS_refreshCommande_command;
+        private System.Windows.Forms.ToolStripMenuItem rafraichirToolStripMenuItem;
     }
 }

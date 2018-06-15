@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(interfaceConnexion));
             this.TB_login = new System.Windows.Forms.TextBox();
             this.TB_password = new System.Windows.Forms.TextBox();
             this.TB_project = new System.Windows.Forms.TextBox();
@@ -53,6 +54,7 @@
             // 
             this.TB_password.Location = new System.Drawing.Point(12, 294);
             this.TB_password.Name = "TB_password";
+            this.TB_password.PasswordChar = '*';
             this.TB_password.Size = new System.Drawing.Size(447, 20);
             this.TB_password.TabIndex = 1;
             // 
@@ -132,6 +134,7 @@
             // 
             // interfaceConnexion
             // 
+            this.AcceptButton = this.B_launchConnection;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 446);
@@ -145,6 +148,7 @@
             this.Controls.Add(this.TB_password);
             this.Controls.Add(this.TB_login);
             this.Controls.Add(this.PB_waitingGIF);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "interfaceConnexion";
             this.Text = "connexion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.connexion_FormClosing);

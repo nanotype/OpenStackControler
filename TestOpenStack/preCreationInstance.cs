@@ -26,6 +26,9 @@ namespace TestOpenStack
 
         private async void B_lunch_creation_Click(object sender, EventArgs e)
         {
+            //log de création
+            Form1.log.Info("Création de l'instance");
+
             //declaration des variables
             Identifier imageID, flavorID;
             verrifDataBeforeCreation();
