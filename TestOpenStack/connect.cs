@@ -67,7 +67,8 @@ namespace TestOpenStack
         private void InitConnexionToMysql()
         {
             // Création de la chaîne de connexion
-            string connectionString = "SERVER=openstack.tk; DATABASE=opensatc; user=root; PASSWORD=mgall";
+            //string connectionString = "SERVER=openstack.tk; DATABASE=opensatc; user=root; PASSWORD=mgall";
+            string connectionString = "SERVER=opensatc.tk; DATABASE=opensatc; UID=root; PWD=mgall";
             mySqlConnection = new MySqlConnection(connectionString);
         }
 
