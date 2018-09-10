@@ -719,7 +719,7 @@ Flavor : {nomGabarit}",
                             /*changement statut en cours à faire*/
                             MysqlUpdate = (MySqlConnection)connect.GetMysqlConnection().Clone();//test de fonctionnement : on clone la connection pour voir si on évite les bug de connexion à la BDD
                             MysqlUpdate.Open();//on ouvre la connexion du clone
-                            updateCommande = new MySqlCommand($"UPDATE `openstack`.`commande` SET `statut` = 'En cours' WHERE `commande`.`id` = {idCommande};", MysqlUpdate);
+                            updateCommande = new MySqlCommand($"UPDATE `commande` SET `statut` = 'En cours' WHERE `commande`.`id` = {idCommande};", MysqlUpdate);
                             updateCommande.ExecuteNonQuery();
                             MysqlUpdate.Close();
                             /* fin changement statut */
